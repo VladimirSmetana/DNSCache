@@ -1,0 +1,6 @@
+# ninja log v5
+7	678	1730534138330161300	CMakeFiles/dns_cache.dir/dns_cache.cpp.o	e0258541b3a9639d
+0	1058	1730534138709191700	CMakeFiles/dns_cache.dir/main.cpp.o	a8b555e83762de64
+7	647	1730534249842300200	CMakeFiles/DNSCache.dir/dns_cache.cpp.o	4df524c9abda5330
+1	947	1730534250141680100	CMakeFiles/DNSCache.dir/main.cpp.o	21437b797ff077c9
+947	1162	1730534250354868500	DNSCache	4a35cf87cc7f3d6e
