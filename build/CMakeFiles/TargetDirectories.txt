@@ -1,3 +1,0 @@
-/home/user/workspace/DNSCache/build/CMakeFiles/DNSCache.dir
-/home/user/workspace/DNSCache/build/CMakeFiles/edit_cache.dir
-/home/user/workspace/DNSCache/build/CMakeFiles/rebuild_cache.dir
