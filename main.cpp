@@ -11,22 +11,23 @@
 
 std::mutex cout_mutex;
 
-void test_DNS_Cache(DNS_Cache& dns_cache, const std::string& name, const std::string& ip) 
+void test_DNS_Cache(DNS_Cache &dns_cache, const std::string &name, const std::string &ip)
 {
     dns_cache.update(name, ip);
     std::this_thread::sleep_for(std::chrono::milliseconds(100));
-    std::lock_guard<std::mutex> lock(cout_mutex); //  для наглядного вывода 
+    std::lock_guard<std::mutex> lock(cout_mutex); //  для наглядного вывода
     if (dns_cache.resolve(name).empty())
     {
         std::cout << "Добавлено " << name << ": " << "значение заменено" << std::endl;
-    } 
+    }
     else
     {
         std::cout << "Добавлено " << name << ": " << dns_cache.resolve(name) << std::endl;
     }
 }
 
-int main() {
+int main()
+{
     const size_t capacity = 3; // максимальное количество выводимых значений
     DNS_Cache dns_cache(capacity);
     std::unordered_map<std::string, std::string> test_map;
@@ -45,7 +46,7 @@ int main() {
         tr.emplace_back(test_DNS_Cache, std::ref(dns_cache), it->first, it->second);
     }
 
-    for (auto& tr_:tr)
+    for (auto &tr_ : tr)
     {
         tr_.join();
     }
