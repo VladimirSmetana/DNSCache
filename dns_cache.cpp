@@ -1,6 +1,6 @@
 #include "dns_cache.h"
 
-void DNS_Cache::update(const std::string &name, const std::string &ip)
+void DNS_Cache::update(const std::string &name, const std::string &ip) // Cредняя сложность O(1) для unordered_map и O(1) для list, итого O(1)
 {
     std::lock_guard<std::mutex> lock(mutex_);
     auto it = cache_map_.find(name);
@@ -25,7 +25,7 @@ void DNS_Cache::update(const std::string &name, const std::string &ip)
     cache_map_[name]->iterator = new_node;
 }
 
-std::string DNS_Cache::resolve(const std::string &name) const
+std::string DNS_Cache::resolve(const std::string &name) const // Сложность O(1)
 {
     std::lock_guard<std::mutex> lock(mutex_);
     auto it = cache_map_.find(name);

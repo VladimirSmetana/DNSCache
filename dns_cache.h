@@ -6,11 +6,10 @@
 class DNS_Cache
 {
 public:
-    explicit DNS_Cache(size_t capacity) : capacity_(capacity) {}
+    explicit DNS_Cache(size_t capacity) : capacity_(capacity) {} 
 
-    void update(const std::string &name, const std::string &ip);
-
-    std::string resolve(const std::string &name) const;
+    void update(const std::string &name, const std::string &ip); // Cредняя сложность O(1) для unordered_map и O(1) для list, итого O(1)
+    std::string resolve(const std::string &name) const; // Сложность O(1)
 
 private:
     struct CacheNode
